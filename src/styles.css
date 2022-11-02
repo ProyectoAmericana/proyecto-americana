@@ -1,1 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.bg-img {
+    background-position: center center;
+    background-size: cover;
+}
+
+/* icons */
+.fa-gradient {
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(0, 119, 255)), to(#333));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+li{
+    list-style: none;
+}
+
+.arduino-btn {
+    border: 1px solid #117493;
+    font-weight: 500;
+    background-color: #117493;
+    border-radius: 15px;
+    padding: 0 30px;
+    line-height: 45px;
+    color: white;
+}
+
+/* .arduino-btn:focus, */
+.arduino-btn:hover {
+    background-color: white;
+    font-weight: 500;
+    color: #117493;
+}
+
+.breadcumb-content h2 {
+    color: #fff;
+    font-size: 60px;
+    line-height: 1;
+    line-height: 1;
+    text-align: center;
+}
+
+.breadcumb-content p {
+    color: #fff;
+    font-size: 25px;
+    line-height: 1;
+    text-align: center;
+}
+
+.breadcumb-content {
+    padding-top: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.breadcumb-area:before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(69, 67, 67, 0.3);
+    content: "";
+    position: absolute;
+    z-index: -1;
+}
+
+.arduino-inicio-area {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background-position: center center;
+    background-size: cover;
+    overflow-x: hidden;
+}

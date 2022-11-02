@@ -1,0 +1,134 @@
+<mat-grid-list cols="1" *ngIf="!modulo; else divArduino">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<ng-template #divArduino>
+
+    <!-- Portada -->
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(assets/images/bg-img/modulo.jpg)">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcumb-content">
+                        <h2>{{modulo.practica}} </h2>
+                        <br>
+                        <p><button type="button" class="btn btn-light" (click)="exportarGuia()">
+                            Descargar Guía
+                        </button></p>
+                        <li (click)="toSection1()" routerLinkActive="active">
+                            <mat-icon class="icon">expand_more</mat-icon>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin Portada -->
+
+    <!-- Introduccion -->
+    <section id="section1">
+        <div class="container">
+            <div class="row mb-3 justify-content-center mt-4">
+                <div class="col-md-9 mx-auto" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="400">
+                    <h1 class="text-uppercase">Introducción</h1>
+                    <br>
+                    <p>{{modulo.introduccion}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Introduccion -->
+
+    <!-- Materiales -->
+    <section>
+        <div class="container">
+            <div class="row mt-4 mb-3">
+                <div class="col abs-center" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500">
+                    <p-carousel [value]="modulo.componentes!" styleClass="custom-carousel" [numVisible]="2"
+                        [numScroll]="1" [circular]="true" [autoplayInterval]="3700"
+                        [responsiveOptions]="responsiveOptions">
+                        <ng-template pTemplate="header">
+                            <h1 class="text-uppercase">Materiales</h1>
+                        </ng-template>
+                        <ng-template let-modulos pTemplate="item">
+                            <div class="product-item">
+                                <div class="product-item-content">
+                                    <div class="p-mb-3">
+                                        <img src="assets/Materiales/{{modulos.nombre}}.jpg" [alt]="modulos.nombre"
+                                            class="product-image" />
+                                    </div>
+                                    <div>
+                                        <br>
+                                        <h1 class="p-mb-1">{{modulos.nombre}}</h1>
+                                        <p>{{modulos.descripcion}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-carousel>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+
+    <!-- Fin Materiales -->
+
+    <!-- Esquema paso a paso-->
+    <section>
+        <div class="container">
+            <div class="row mt-4 mb-3" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="300">
+                <h1 class="text-uppercase mt-3 mb-6"> Montaje </h1>
+                <p-timeline  [value]="modulo.pasos!" align="alternate" styleClass="customized-timeline">
+                    <ng-template pTemplate="marker" let-event>
+                        <span class="custom-marker p-shadow-2">
+                            <i [ngClass]="icono"></i>
+                        </span>
+                      </ng-template>
+                    <ng-template pTemplate="content" let-modulo>    
+                        <div>
+                            <div class="product-item-content2">
+                                <div class="p-mb-3">
+                                    <h1>{{modulo.montaje}}</h1>
+                                    <p class="p-mb-1">{{modulo.paso}}</p>                                    
+                                    <img src="assets/Laboratorios/{{modulo.id}}.jpg" [alt]="modulo.montaje" width="370" class="product-image" />
+                                    <!-- <img [src]="modulo | imagen" [alt]="modulo.id" class="product-image" /> -->
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template> 
+                </p-timeline>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Esquema -->
+
+    <!-- Codigo -->
+    <section>
+        <div class="container">
+            <div class="row mt-6 mb-3 " data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="500">
+                <h1 class="text-uppercase mb-5"> Codigo</h1>
+                <div class="col-10 mx-auto divCodigo">
+                    <p *ngFor="let item of modulo.codigo;">
+                        {{item}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Codigo -->
+
+    <!-- Boton Regresar -->
+    <section>
+        <div class="container mt-6 mb-6 ">
+            <div class="col-12" style="justify-content:center; display: flex;">
+                <button (click)="regresar()" type="submit" class="btn arduino-btn"><span></span> Regresar</button>
+            </div> 
+        </div>
+    </section>
+   <!-- Fin Boton Regresar -->
+
+</ng-template>

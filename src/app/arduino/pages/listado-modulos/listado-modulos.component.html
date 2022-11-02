@@ -1,0 +1,53 @@
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(assets/images/bg-img/listado-modulos.jpg)">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h2>Modulos</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="abs-center">
+    <button class="btn botn-listado"
+            data-aos="fade-right" data-aos-easing="linear" data-aos-duration="400"
+            (click)="prevPage()">
+        Anterior
+    </button>
+
+    <input type="text"
+            class="form-control mb-2 search-module"
+            placeholder="Buscar modulo"
+            #txtSearch
+            (keyup)="onSearch( txtSearch.value )" /> 
+
+    <button class="btn  botn-listado"
+            data-aos="fade-left" data-aos-easing="linear" data-aos-duration="400"
+            (click)="nextPage()"
+            [disabled]="(modulos | filtro:page:search).length === 0">
+            Siguiente
+    </button>
+</div>
+
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="20px">  <!-- fxLayoutGap: separar las targetas 
+                               fxLayout.xs. cuando la pantalla es pequeña -->
+                               
+    <div fxFlex="20"  
+         fxFlex.lg="20"
+         fxFlex.sm="30" 
+         *ngFor="let modulo of modulos | filtro: page : search" >    <!--fxFlex: cada targeta tiene el 20% del row.  
+                                           fxFlex.lg: cuando la pantalla es muy grande
+                                           fxFlex.sm: cuando la pantalla es pequeña -->
+        <app-arduino-targeta [modulo]="modulo" *ngIf="!carga" ></app-arduino-targeta> <!-- enviar los datos del modulo al componente -->
+        <ngx-skeleton-loader count="10" appearance="line" *ngIf="carga"></ngx-skeleton-loader>
+    </div>
+
+</div>
+
+
+

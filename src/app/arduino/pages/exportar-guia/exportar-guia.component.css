@@ -1,0 +1,56 @@
+@font-face {
+    font-family: "DejaVu Sans";
+    src: url("https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");
+}
+mat-card{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px; 
+}
+
+.targeta{
+    box-shadow: 5px 5px 15px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 380px;
+}
+
+h1{
+    letter-spacing: 2.3px;
+    color: #117493;
+    font-size: x-large;
+    text-align: center;
+}
+
+
+.custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #117493;
+    border-radius: 50%;
+    z-index: 1;
+    color: white;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+}
+
+.product-item-content2 {
+    border: 3px solid var(--surface-d);
+    border-radius: 15px;
+    margin: .3rem;
+    text-align: center;
+    padding: 1rem ;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.382), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.divCodigo{
+    border-radius: 10px;
+    padding: 30px;
+    background-color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
+}

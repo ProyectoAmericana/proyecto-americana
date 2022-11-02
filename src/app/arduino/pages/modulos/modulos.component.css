@@ -1,0 +1,107 @@
+.product-item {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 0;
+}
+.product-item-content {
+    border: 2px solid var(--surface-d);
+    border-radius: 15px;
+    margin: .3rem;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 5px 5px 15px; 
+}
+.product-image {
+    width: 80%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.382), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 15px;
+}
+
+.product-item-content2 {
+    border: 2px solid var(--surface-d);
+    border-radius: 15px;
+    margin: .3rem;
+    text-align: center;
+    padding: 1rem ;
+}
+
+h1{
+    letter-spacing: 2.3px;
+    color: #117493;
+    font-size: x-large;
+    text-align: center;
+}
+
+.divCodigo{
+    border-radius: 10px;
+    padding: 30px;
+    background-color: rgb(66, 66, 66);
+    color: rgb(255, 255, 255);
+}
+
+.breadcumb-area {
+    position: relative;
+    z-index: 1;
+    height: 580px;
+}
+
+.breadcumb-content h1 {
+    line-height: 1;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+li{
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    
+    text-align: center;
+    font-size: 80px;
+    margin: 60px auto;
+	width: 100px;
+    height: 70px;
+    color: white;
+    animation: animation 2s infinite linear;
+		}
+
+.icon:hover{
+    cursor: pointer;
+}	
+
+.custom-marker {
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #117493;
+    border-radius: 50%;
+    z-index: 1;
+    color: white;
+}
+@keyframes animation {
+    50% {
+            font-size: 100px;
+        }
+}
+
+@media screen and (max-width: 992px) {
+  ::ng-deep .customized-timeline .p-timeline-event:nth-child(even) {
+    flex-direction: row !important;
+  }
+  ::ng-deep .customized-timeline .p-timeline-event:nth-child(even) .p-timeline-event-content {
+    text-align: left !important;
+  }
+  ::ng-deep .customized-timeline .p-timeline-event-opposite {
+    flex: 0;
+  }
+  ::ng-deep .customized-timeline .p-card {
+    margin-top: 1rem;
+  }
+}

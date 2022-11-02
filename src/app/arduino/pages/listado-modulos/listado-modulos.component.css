@@ -1,0 +1,30 @@
+.search-module{
+    margin: 40px;
+    border-radius: 15px;
+    width: 60%;  
+    height: 44px;
+}
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    border: #117493;
+  }
+
+.botn-listado{
+    margin-top: 40px;
+    border-radius: 15px; 
+    background-color: #117493;
+    color: white;
+}
+
+.breadcumb-area {
+    position: relative;
+    z-index: 1;
+    height: 500px;
+}
+
+
+
+

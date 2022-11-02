@@ -1,0 +1,96 @@
+<mat-grid-list cols="1" *ngIf="!modulo; else divArduino">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+<ng-template #divArduino>
+    <kendo-pdf-export #pdf margin="5mm" [scale]="0.5">
+        <div>
+             <!-- Introduccion -->
+            <section>
+                <div class="container">
+                    <div class="row mb-3 justify-content-center mt-4">
+                        <div class="col-md-9 mx-auto">
+                            <h1 class="text-uppercase">Introducción</h1>
+                            <br>
+                            <p>{{modulo.introduccion}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fin Introduccion -->
+            
+            <!-- materiales -->
+            <section>
+                <h1 class="text-uppercase">Materiales</h1>         
+                <div fxLayout="row wrap"
+                    fxLayoutAlign="center"
+                    fxLayoutGap="20px">   
+                    <div fxFlex="30"  
+                        fxFlex.lg="30"
+                        *ngFor="let item of modulo.componentes!" 
+                        >
+                        <mat-card class="product-item-content2" style="border-radius: 15px;">
+                            <mat-card-header>
+                                <h1 style="text-align:center ;">{{item.nombre}}</h1>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>{{item.descripcion}}</p>
+                            </mat-card-content>  
+                            <!-- <img src="assets/Laboratorios/{{item.nombre}}.jpg" [alt]="item.nombre" class="product-image" style="width:350px;"/>                    -->
+                            <img src="assets/Materiales/{{item.nombre}}.jpg" [alt]="item.nombre" 
+                            style="width:340px; border: 3px solid var(--surface-d); border-radius: 15px;"/>
+                        </mat-card>                                 
+                    </div>
+                </div>
+            </section>
+            <!-- materiales -->
+
+            <!-- paso a paso -->
+            <section>
+                <div class="container">
+                    <div class="row mt-4 mb-3">
+                        <h1 class="text-uppercase mt-3 mb-6"> Montaje </h1>
+                        <p-timeline  [value]="modulo.pasos!" align="alternate" styleClass="customized-timeline">
+                            <ng-template pTemplate="marker" let-event>
+                                <span class="custom-marker p-shadow-2">
+                                    <i></i>
+                                </span>
+                              </ng-template>
+                            <ng-template pTemplate="content" let-modulo>    
+                                <div>
+                                    <div class="product-item-content2">
+                                        <div class="p-mb-3">
+                                            <h1>{{modulo.montaje}}</h1>
+                                            <p class="p-mb-1">{{modulo.paso}}</p>                                    
+                                            <img src="assets/Laboratorios/{{modulo.id}}.jpg" [alt]="modulo.montaje" width="370" style="border: 3px solid var(--surface-d); border-radius: 15px;" />
+                                            <!-- <img [src]="modulo | imagen" [alt]="modulo.id" class="product-image" /> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template> 
+                        </p-timeline>
+                    </div>
+                </div>
+            </section>
+            <!-- paso a paso -->
+
+              <!-- Codigo -->
+            <section>
+                <div class="container">
+                    <div class="row mt-6 mb-3">
+                        <h1 class="text-uppercase mb-5"> Codigo</h1>
+                        <div class="col-10 mx-auto divCodigo">
+                            <p *ngFor="let item of modulo.codigo;">
+                                {{item}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Codigo -->
+
+        </div>
+    </kendo-pdf-export>
+
+</ng-template>

@@ -1,0 +1,23 @@
+<mat-card class="targeta" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="300">
+    <img mat-card-image [src]="modulo | imagen" class="imagen">
+
+    <mat-card-header>
+        <mat-card-title>{{modulo.practica}}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <p>
+            Guía de Arduino para: {{modulo.practica}}
+        </p>
+    </mat-card-content>
+
+    <mat-card-actions style="text-align: center;">
+        <button class="arduino-btn"
+                [routerLink]="['/', modulo.id]">
+            Leer más
+        </button>
+    </mat-card-actions> 
+</mat-card>
+
+
+  
