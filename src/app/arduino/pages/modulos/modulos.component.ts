@@ -63,7 +63,8 @@ export class ModulosComponent implements OnInit {
   }
 
   exportarGuia(){
-    const url = this.router.serializeUrl(this.router.createUrlTree(['/exportar/' + this.idModulo]));
-    window.open(url, '_blank');
+    this.router.navigate(['/exportar/' + this.idModulo])
+    // const url = this.router.serializeUrl(this.router.createUrlTree(['/exportar/' + this.idModulo]));
+    // window.open(url, '_blank');
   }
 }

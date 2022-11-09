@@ -15,8 +15,9 @@ export class InicioComponent implements OnInit {
   }
 
   exportarGuia(nombreGuia:string){
-    const url = this.router.serializeUrl(this.router.createUrlTree(['/primeros-pasos/' + nombreGuia]));
-    window.open(url, '_blank');
+    this.router.navigate(['/primeros-pasos/' + nombreGuia]);
+    // const url = this.router.serializeUrl(this.router.createUrlTree(['/primeros-pasos/' + nombreGuia]));
+    // window.open(url, '_blank');
   }
 
 }
